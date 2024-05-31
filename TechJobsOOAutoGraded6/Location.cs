@@ -13,7 +13,7 @@ namespace TechJobsOOAutoGraded6
             nextId++;
         }
 
-        // TODO: Task 2: Add a second constructor to this class that uses the Location() constructor and sets the value of the value field.
+        // TODONE: Task 2: Add a second constructor to this class that uses the Location() constructor and sets the value of the value field.
         public Location(string value) : this()
         {
             Value = value;
