@@ -27,7 +27,7 @@ namespace TechJobsOOAutoGraded6
             }
 
 
-            // TODO: Task 3: Generate Equals() and GetHashCode() methods.  
+            // TODONE: Task 3: Generate Equals() and GetHashCode() methods.  
             public override bool Equals(object obj)
             {
                 return obj is Job job &&
