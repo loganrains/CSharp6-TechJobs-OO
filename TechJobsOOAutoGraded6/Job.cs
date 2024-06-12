@@ -39,8 +39,59 @@ namespace TechJobsOOAutoGraded6
                 return HashCode.Combine(Id);
             }
 
-            // TODO: Task 5: Generate custom ToString() method.
-                //Until you create this method, you will not be able to print a job to the console.
+        // TODO: Task 5: Generate custom ToString() method.
+        public override string ToString()
+        {
+            string returnString = Environment.NewLine + "ID: " + Id;
+            
+            if (Name == null)
+            {
+                returnString = $"{returnString}{Environment.NewLine}Name: Data not available";
+            }
+            else
+            {
+                returnString = $"{returnString}{Environment.NewLine}Name: " + Name;
+            }
+
+            if (EmployerName == null || EmployerName.Value == "")
+            {
+                returnString = $"{returnString}{Environment.NewLine}Employer: Data not available";
+            }
+            else
+            {
+                returnString = $"{returnString}{Environment.NewLine}Employer: " + EmployerName;
+            }
+
+            if (EmployerLocation == null || EmployerLocation.Value == "")
+            {
+                returnString = $"{returnString}{Environment.NewLine}Location: Data not available";
+            }
+            else
+            {
+                returnString = $"{returnString}{Environment.NewLine}Location: " + EmployerLocation;
+            }
+
+            if (JobType == null || JobType.Value == "")
+            {
+                returnString = $"{returnString}{Environment.NewLine}Position Type: Data not available";
+            }
+            else
+            {
+                returnString = $"{returnString}{Environment.NewLine}Position Type: " + JobType;
+            }
+
+            if (JobCoreCompetency == null || JobCoreCompetency.Value == "")
+            {
+                returnString = $"{returnString}{Environment.NewLine}Core Competency: Data not available";
+            }
+            else
+            {
+                returnString = $"{returnString}{Environment.NewLine}Core Competency: " + JobCoreCompetency;
+            }
+            
+            return returnString + Environment.NewLine;
+
+        }
     }
 }
 

@@ -36,6 +36,41 @@ namespace TechJobs.Tests
         {
             Assert.IsFalse(job3.Equals(job4));
         }
+
+        [TestMethod]
+        public void TestToStringStartsAndEndsWithNewLine()
+        {
+            string jobString = job3.ToString();
+
+            Assert.IsTrue(jobString.Substring(0,4).Contains(Environment.NewLine));
+            Assert.IsTrue(jobString.Substring(jobString.Length - 4, 4).Contains(Environment.NewLine));
+            
+        }
+
+        [TestMethod]
+        public void TestToStringContainsCorrectLabelsAndData()
+        {
+            string jobString = job3.ToString();
+
+            Assert.IsTrue(jobString.Contains("ID: "));
+            Assert.IsTrue(jobString.Contains("Name: "));
+            Assert.IsTrue(jobString.Contains("Employer: "));
+            Assert.IsTrue(jobString.Contains("Location: "));
+            Assert.IsTrue(jobString.Contains("Position Type: "));
+            Assert.IsTrue(jobString.Contains("Core Competency: "));
+        }
+
+        [TestMethod]
+        public void TestToStringHandlesEmptyField()
+        {   
+            string jobString2 = job1.ToString();
+            
+            Assert.IsTrue(jobString2.Contains("Name: Data not available"));
+            Assert.IsTrue(jobString2.Contains("Employer: Data not available"));
+            Assert.IsTrue(jobString2.Contains("Location: Data not available"));
+            Assert.IsTrue(jobString2.Contains("Position Type: Data not available"));
+            Assert.IsTrue(jobString2.Contains("Core Competency: Data not available"));
+        }
     }
 }
 
